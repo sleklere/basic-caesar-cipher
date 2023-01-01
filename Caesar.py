@@ -12,8 +12,11 @@ for char in string.ascii_letters:
 # Input to choose encryption or decryption
 while True:
     print('------------------------------')
-    encrypt_or_decrypt = input('Enter 1(Encrypt) or 2(Decrypt):\n')
-    if encrypt_or_decrypt == '1' or encrypt_or_decrypt == '2':
+    try:
+        encrypt_or_decrypt = int(input('Enter 1(Encrypt) or 2(Decrypt):\n'))
+    except ValueError:
+        encrypt_or_decrypt = None
+    if encrypt_or_decrypt == 1 or encrypt_or_decrypt == 2:
         break
     else:
         print('#######################################################')
